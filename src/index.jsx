@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Banner from './components/Banner'
-import Footer from './components/Footer'
+import HomePage from './pages/Home'
+import Footer from './layout/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,9 +16,8 @@ root.render(
 ReactDOM.render(
     <React.StrictMode>
         <Router>
-          <Banner />
           <Route exact path="./pages/Home">
-            <Home />
+            <HomePage />
           </Route>
           <Footer />
         </Router>
