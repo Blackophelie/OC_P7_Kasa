@@ -1,21 +1,25 @@
+// ------------- Importation --------------------- //
 import React from "react";
-import "./Header.css";
-// import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import Nav from "../components/Nav";
 
+import "../styles/Header.css";
+
+// --------- Création du Header -------------------- //
 function Header() {
    return (
-      <header className="headerSection">
+      <header>
          <div>
-            {/* <Link to={"/"} /> */}
+            {/* import du  logo */}
                <img src={logo} alt="logo kasa" className="navLogo" />
          </div>
+         {/* import de la navigation du header */}
          <nav className="navBar">
-                  <div>Accueil</div>
-                  <div>A propos</div>
+            <Nav />
          </nav>
       </header>   
    );
 };
 
+// -------- Export du Header --------- //
 export default Header;

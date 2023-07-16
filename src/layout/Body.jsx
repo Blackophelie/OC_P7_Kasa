@@ -1,17 +1,11 @@
+// ----- Importations ----- //
 import React from "react";
 import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
-// import App from "../components/App";
 
-// import { Routes, Route } from "react-router-dom";
+import "../styles/Body.css";
 
-// const appRoute = Routes([
-//    {
-//       path:"/",
-//       element: <App />
-//    }
-// ]);
-
+// ----- Création du crops de la page ----- //
 function Body() {
    return (
    <div>
@@ -20,4 +14,5 @@ function Body() {
    </div>)
 }
 
-export default Body
+// ----- Export du corps de la page ----- //
+export default Body;

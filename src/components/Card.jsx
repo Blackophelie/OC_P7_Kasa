@@ -1,7 +1,8 @@
+// ----- Importations ----- //
 import React from "react";
 import "../styles/GalleryCard.css";
-// import CardPhoto from "../utils/photos";
 
+// ----- Création d'une fiche appartement ----- //
 function Card() {
    return (
       <div className="locationTitle">
@@ -10,4 +11,5 @@ function Card() {
    );
 };
 
+// ----- Export d'une fiche appartement ----- //
 export default Card;

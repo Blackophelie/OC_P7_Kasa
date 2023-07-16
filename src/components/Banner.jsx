@@ -1,6 +1,8 @@
+// ----- Importations ----- //
 import React from "react";
 import "../styles/Banner.css";
 
+// ----- Création de la bannière ----- //
 function Banner() {
    return (
       <div className="bannerTitle">
@@ -9,4 +11,5 @@ function Banner() {
    );
 };
 
+// ----- Export de la bannière ----- //
 export default Banner;
