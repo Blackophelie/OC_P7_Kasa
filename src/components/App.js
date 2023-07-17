@@ -9,6 +9,7 @@ import "../styles/App.scss";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import ApartmentCard from "../pages/ApartmentCard";
+import Error from "../pages/Error";
 
 // ----- Importation du routeur ----- //
 import { Routes, Route } from "react-router-dom";
@@ -19,9 +20,11 @@ function App() {
     <div className="app">
       <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/ApartmentCard/:id" element={<ApartmentCard />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
       <Footer />
     </div>

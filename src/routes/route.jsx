@@ -12,9 +12,9 @@ import Apartment from "../pages/ApartmentCard";
 ReactDOM.render(
    <React.StrictMode>
       <Routes>
+         <Route path="/" element={ <Home /> } />
          <Route path="/About" element={ <About /> } />
          <Route path="/Error" element={ <Error /> } />
-         <Route path="/Home" element={ <Home /> } />
          <Route path="ApartmentCard/:ApartmentId" element={ <Apartment /> } />
       </Routes>
    </React.StrictMode>,
