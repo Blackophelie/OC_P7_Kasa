@@ -1,17 +1,17 @@
-// ------------- Importation --------------------- //
+// ----- Importations ----- //
 import React from "react";
-import logo from "../assets/logo.svg";
+import Logo from "../assets/logo.svg";
 import Nav from "../components/Nav";
 
-import "../styles/Header.css";
+import "../styles/Header.scss";
 
-// --------- Création du Header -------------------- //
+// ----- Création du Header ----- //
 function Header() {
    return (
       <header>
          <div>
             {/* import du  logo */}
-               <img src={logo} alt="logo kasa" className="navLogo" />
+               <img src={Logo} alt="logo kasa" className="navLogo" />
          </div>
          {/* import de la navigation du header */}
          <nav className="navBar">
@@ -21,5 +21,5 @@ function Header() {
    );
 };
 
-// -------- Export du Header --------- //
+// ----- Export du Header ----- //
 export default Header;

@@ -1,26 +1,32 @@
+// -----Import de React ----- //
 import React from "react";
 
-// ----------------Import des layouts----------- //
+// ----- Import des layouts ----- //
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
-import Body from "../layout/Body";
-import "../styles/App.css";
+import "../styles/App.scss";
 
-// ----------Import du routeur------------------- //
-import { BrowserRouter } from "react-router-dom";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import ApartmentCard from "../pages/ApartmentCard";
 
-// ------------ Composant App ------------------ //
+// ----- Importation du routeur ----- //
+import { Routes, Route } from "react-router-dom";
+
+// ----- Création du composant App ----- //
 function App() {
   return (
     <div className="app">
-      <BrowserRouter>
-        <Header />
-        <Body />
-        <Footer />
-      </BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/Home" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/ApartmentCard/:id" element={<ApartmentCard />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
 
-// -------- Export du composant créé ---------- //
+// ----- Export du composant App créé ----- //
 export default App;

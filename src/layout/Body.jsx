@@ -3,9 +3,9 @@ import React from "react";
 import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
 
-import "../styles/Body.css";
+import "../styles/Body.scss";
 
-// ----- Création du crops de la page ----- //
+// ----- Création du corps de la page ----- //
 function Body() {
    return (
    <div>

@@ -1,32 +1,16 @@
+// ----- Importations ----- //
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './components/App';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/Home';
-import About from './pages/About';
-import Header from './layout/Header';
-import Body from './layout/Body';
-import Footer from './layout/Footer';
+
+// ----- Import du routeur ----- //
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>
+  </BrowserRouter>
 );
  
-ReactDOM.render(
-    <React.StrictMode>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/" element={<About />} />
-          </Routes>
-          <Body />
-          <Footer />
-          <Footer />
-        </Router>
-    </React.StrictMode>
-);

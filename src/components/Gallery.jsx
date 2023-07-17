@@ -1,7 +1,7 @@
 // ----- Importations ----- //
 import React from "react";
 import Card from "../components/Card";
-import "../styles/GalleryCard.css";
+import "../styles/GalleryCard.scss";
 
 // ----- Création de la galerie ----- //
 function Gallery() {

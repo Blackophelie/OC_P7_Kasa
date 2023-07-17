@@ -1,0 +1,22 @@
+/* Bannière */
+.bannerTitle {
+   display: flex;
+   justify-content: center;
+   border: 2px solid blue;
+   max-width: 1240px;
+   height: 223px;
+   background-image: url("../assets/photoBanner.png");
+   border-radius: 25px;
+   
+}
+
+/* Texte de la bannière */
+.bannerTitle h1 {
+   color: #FFFFFF;
+   font-family: 'Montserrat';
+   font-weight: 500;
+   font-size: 48px;
+   width: 705px;
+   height: 68px;
+}
+

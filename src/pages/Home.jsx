@@ -1,16 +1,20 @@
+// ----- Importations ----- //
 import React from "react";
-import Header from "../layout/Header";
-import Body from "../layout/Body";
-import Footer from "../layout/Footer";
 
+import Banner from "../components/Banner";
+import Gallery from "../components/Gallery";
+
+import "../styles/Home.scss";
+
+// ----- Création de la page d'accueil ----- //
 function Home() {
    return (
       <div className='homePage'>
-         <Header />
-         <Body />
-         <Footer />
+         <Banner />
+         <Gallery />
       </div>
    )
 }
 
+// ----- Export de la page d'accueil ----- //
 export default Home;

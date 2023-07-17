@@ -1,6 +1,9 @@
-import "../styles/Error.css";
+// ----- Importations ----- //
+import "../styles/Error.scss";
+
 import { Link } from "react-router-dom";
 
+// ----- Création de la page Error 404 ----- //
 function Error() {
    return (
       <div className="errorBody">
@@ -15,4 +18,5 @@ function Error() {
    );
 };
 
+// ----- Export de la page Error 404 ----- //
 export default Error;

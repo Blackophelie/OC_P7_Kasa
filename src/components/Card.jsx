@@ -1,6 +1,6 @@
 // ----- Importations ----- //
 import React from "react";
-import "../styles/GalleryCard.css";
+import "../styles/GalleryCard.scss";
 
 // ----- Création d'une fiche appartement ----- //
 function Card() {

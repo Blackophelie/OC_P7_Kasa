@@ -1,19 +1,18 @@
 // ----- Importations ----- //
 import React from "react";
-import logo from "../assets/logo.svg";
+import Logo from "../assets/logo.svg";
 
-import "../styles/Footer.css";
+import "../styles/Footer.scss";
 
 // ----- Création du footer ----- //
 function Footer() {
    return (
       <div className="footer">
          <div>
-            <img src={logo} alt="logo kasa" className="footerLogo" />
+            <img src={ Logo } alt="logo kasa" className="footerLogo" />
          </div>
          <div className="copyright">
-            <logo />
-            "@ 2020 Kasa. All rights reserved"
+            @ 2020 Kasa. All rights reserved
          </div>
       </div>
    )
