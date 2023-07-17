@@ -1,0 +1,25 @@
+.errorBody {
+   color: #FF6060;
+   text-align: center;
+   font-family: 'Montserrat';
+}
+
+.errorBody h1 {
+   font-weight: 700;
+   font-size: 288px;
+}
+
+.errorBody h2 {
+   font-weight: 500;
+   font-size: 36px;
+}
+
+.errorBody span {
+   font-weight: 500;
+   font-size: 18px;
+   text-decoration: underline solid #FF6060;
+}
+
+.errorBody span:visited, .errorBody span:link, .errorBody span:active, .errorBody span:hover {
+   color: #FF6060;
+}

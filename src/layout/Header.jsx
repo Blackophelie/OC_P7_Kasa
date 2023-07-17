@@ -2,6 +2,7 @@
 import React from "react";
 import Logo from "../assets/logo.svg";
 import Nav from "../components/Nav";
+import { Link } from "react-router-dom";
 
 import "../styles/Header.scss";
 
@@ -11,7 +12,9 @@ function Header() {
       <header>
          <div>
             {/* import du  logo */}
-               <img src={Logo} alt="logo kasa" className="navLogo" />
+            <Link to="/Home">
+               <img src={ Logo } alt="logo kasa" className="navLogo" />
+            </Link>
          </div>
          {/* import de la navigation du header */}
          <nav className="navBar">

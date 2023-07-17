@@ -1,7 +1,7 @@
 // ------------ Importations ------------ //
 import React from "react";
 import { Link } from 'react-router-dom'
-import '../styles/Header.scss'
+import '../styles/Nav.scss'
 
 // ----- Création de la navigation du Header ----- //
 function Nav() {
@@ -9,7 +9,7 @@ function Nav() {
         <nav>
             <div className='navBar'>
                 <Link to="/Home">Accueil</Link>
-                <Link to="/About">À propos</Link>
+                <Link to="/About">A Propos</Link>
             </div>
         </nav>
     )
