@@ -1,13 +1,20 @@
 // ----- Importations ----- //
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/GalleryCard.scss";
 
 // ----- Création d'une fiche appartement ----- //
-function Card() {
+function Card({ id, title, cover }) {
    return (
-      <div className="locationTitle">
-         <h2>Titre de la Location</h2>
-      </div>
+      <Link to={"../ApartmentCard/:{id}"} className="galleryCard">
+         <div className="cardPicture">
+            {/* <div classname="diapo"> */}
+               <img src={cover} alt={title} />
+            {/* </div> */}
+            <div className="diapo imgFilter"></div>
+            <h3>{title}</h3>
+         </div>
+      </Link>
    );
 };
 

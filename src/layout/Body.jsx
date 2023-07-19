@@ -8,10 +8,10 @@ import "../styles/Body.scss";
 // ----- Création du corps de la page ----- //
 function Body() {
    return (
-   <div>
+   <body>
       <Banner />
       <Gallery />
-   </div>)
+   </body>)
 }
 
 // ----- Export du corps de la page ----- //
