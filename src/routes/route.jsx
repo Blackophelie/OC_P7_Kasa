@@ -6,7 +6,7 @@ import { BrowserRouter as Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Error from "../pages/Error";
-import Apartment from "../pages/ApartmentCard";
+import Apartment from "../pages/Apartment";
 
 // ----- Création des différentes routes ----- //
 ReactDOM.render(
@@ -15,7 +15,7 @@ ReactDOM.render(
          <Route path="/" element={ <Home /> } />
          <Route path="/About" element={ <About /> } />
          <Route path="/Error" element={ <Error /> } />
-         <Route path="/ApartmentCard/:ApartmentId" element={ <Apartment /> } />
+         <Route path="/Apartment/:ApartmentId" element={ <Apartment /> } />
       </Routes>
    </React.StrictMode>,
    document.getElementById('root')

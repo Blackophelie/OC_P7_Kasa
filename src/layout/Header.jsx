@@ -11,12 +11,12 @@ function Header() {
    return (
       <header>
          <div>
-            {/* import du  logo */}
+            {/* import du composant logo */}
             <Link to="/Home">
                <img src={ Logo } alt="logo kasa" className="navLogo" />
             </Link>
          </div>
-         {/* import de la navigation du header */}
+         {/* import du composant navigation du header */}
          <nav className="navBar">
             <Nav />
          </nav>

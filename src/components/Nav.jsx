@@ -16,4 +16,4 @@ function Nav() {
 }
 
 // ----- Export de la navigation ----- //
-export default Nav
+export default Nav;

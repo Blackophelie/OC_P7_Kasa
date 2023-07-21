@@ -1,14 +1,15 @@
 // ----- Importations ----- //
 import React from "react";
 import Card from "../components/Card";
-import Datas from "../data/data"
+import Apartments from "../data/ApartmentDatas";
+
 import "../styles/GalleryCard.scss";
 
 // ----- Création de la galerie ----- //
 function Gallery() {
    return (
       <div className="galleryContainer">
-         {Datas.map(data =>{
+         {Apartments.map(data =>{
             return (
                <Card
                   key={data.id}

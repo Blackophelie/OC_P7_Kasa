@@ -1,0 +1,16 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  list-style: none;
+  width: 309px;
+}
+
+.navBar a {
+  text-decoration: none;
+  color: #FF6060;
+}
+
+.navBar a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Nav.css.map */

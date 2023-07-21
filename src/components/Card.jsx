@@ -6,11 +6,9 @@ import "../styles/GalleryCard.scss";
 // ----- Création d'une fiche appartement ----- //
 function Card({ id, title, cover }) {
    return (
-      <Link to={"../ApartmentCard/:{id}"} className="galleryCard">
+      <Link to={"../Apartment/" + id} className="galleryCard">
          <div className="cardPicture">
-            {/* <div classname="diapo"> */}
-               <img src={cover} alt={title} />
-            {/* </div> */}
+            <img src={cover} alt={title} />
             <div className="diapo imgFilter"></div>
             <h3>{title}</h3>
          </div>

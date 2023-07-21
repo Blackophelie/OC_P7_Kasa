@@ -1,0 +1,27 @@
+.errorBody {
+  color: #FF6060;
+  text-align: center;
+  font-family: "Montserrat";
+  text-decoration: none;
+  margin-bottom: 100px;
+}
+
+.errorBody h1 {
+  font-weight: 700;
+  font-size: 288px;
+  margin-bottom: 50px;
+}
+
+.errorBody h2 {
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 100px;
+}
+
+.errorBody a {
+  color: #FF6060;
+  font-weight: 500;
+  font-size: 18px;
+  -webkit-text-decoration: underline solid #FF6060;
+          text-decoration: underline solid #FF6060;
+}/*# sourceMappingURL=Error.css.map */

@@ -8,7 +8,7 @@ import "../styles/App.scss";
 
 import Home from "../pages/Home";
 import About from "../pages/About";
-import ApartmentCard from "../pages/ApartmentCard";
+import ApartmentCard from "../pages/Apartment";
 import Error from "../pages/Error";
 
 // ----- Importation du routeur ----- //
@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/ApartmentCard/:id" element={<ApartmentCard />} />
+        <Route path="/Apartment/:id" element={<ApartmentCard />} />
         <Route path="/*" element={<Error />} />
       </Routes>
       <Footer />
