@@ -1,8 +1,126 @@
+* {
+   font-family: "Montserrat";
+   font-weight: 500;
+   color: #FF6060;
+}
 
+.apartmentBody {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin: 0 40px
+}
 
+.carousel {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-bottom: 30px;
+}
 
+.designation {
+   display: flex;
+   width: 100%;
+}
 
+.apartmentDesignation {
+   flex-direction: row;
+}
 
+.apartmentTitle {
+   display: flex;
+   font-size: 36px;
+   align-items: none;
+}
+
+.apartmentLocation {
+   font-size: 18px;
+}
+
+.apartmentHost {
+   position: absolute;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   font-size: 18px;
+   width: 160px;
+   right: 40px;
+}
+
+.hostName {
+   width: 93px;
+   text-align: right;
+   padding-right: 10px;
+}
+
+.hostPicture {
+   border-radius: 50%;
+   height: 64px;
+}
+
+.apartmentAssets {
+   display: flex;
+}
+
+.apartmentTags {
+   display: flex;
+   flex-direction: row;
+   padding: 20px 0px;
+}
+
+.apartmentTags li {
+   font-size: 14px;
+   margin-right: 10px;
+   list-style: none;
+   color: #FFFFFF;
+   background-color: #FF6060;
+   border-radius: 10px;
+   padding: 3px 35px;
+}
+
+h5 {
+   position: absolute;
+   width: 44%;
+   top: 719px;
+   font-size: 18px;
+   color: #FFFFFF;
+   background-color: #FF6060;
+   border-radius: 10px;
+   padding: 13px 20px;
+}
+
+.apartmentRate {
+   position: absolute;
+   right: 40px;
+   height: 36px;
+}
+
+.apartmentCaracteristics {
+   display: flex;
+   width: 100%;
+}
+
+.apartmentDescription, .apartmentEquipments {
+   width: 50%;
+   margin-right: 40px;
+}
+
+.apartmentEquipments {
+   list-style: none;
+}
+
+ p {
+   height: auto;
+   text-align: justify;
+   font-size: 500;
+   margin-top: -20px;
+   margin-bottom: 40px;
+   padding: 50px 20px 20px 20px;
+   line-height: 26px;
+   font-size: 18px;
+   background-color: #F6F6F6;
+   border-radius: 10px;
+}
 
 
 

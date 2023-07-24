@@ -26,7 +26,7 @@ function Carousel() {
    }
 
    return (
-      <div className='carousel'>
+      <div className='carouselBody'>
          {pictures.length > 1 &&(
             <img className='arrowLeft' src={arrowLeft} alt='flèche vers la gauche' onClick={LeftSliding}/>
          )}

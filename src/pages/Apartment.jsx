@@ -6,6 +6,10 @@ import ApartmentsList from "../datas/ApartmentsDatas.json";
 import "../styles/Apartment.scss";
 import Error from "../pages/Error";
 import Carousel from "../components/Carousel";
+import RatingStars from "../components/Rate";
+import ArrowDown from "../assets/arrow_down.png";
+import ArrowUp from "../assets/arrow_up.png";
+
 
 
 
@@ -18,6 +22,8 @@ function ApartmentCard() {
    let id = idUrl.pathname.replace('/Apartment/', '')
     
    const apart = ApartmentsList.find((apart) => apart.id === id);
+   const tags = apart.tags;
+   const equipments = apart.equipments;
 
    if (!apart) {
       return <Error />
@@ -30,23 +36,44 @@ function ApartmentCard() {
                <Carousel />
             </div>
             <div className="designation">
-               <h3 className="apartmentTitle">{ apart.title }</h3>
-               <div className="apartmentLocation">{ apart.location }</div>
-               <div className="apartmentTag">{ apart.tags }</div>
+               <div className="apartmentDesignation">
+                  <h3 className="apartmentTitle">
+                     { apart.title }
+                  </h3> 
+                  <h4 className="apartmentLocation">
+                     { apart.location }
+                  </h4>
+               </div>
+               <div className="apartmentHost">
+                  <div className="hostName">
+                     { apart.host.name }
+                  </div>
+                  <img className="hostPicture"
+                  src= { apart.host.picture } alt="Votre hôte"/>
+               </div>
             </div>
-            <div className="apartmentHost">
-               { apart.name }
-               { apart.picture }
-               { apart.rating }
+            <div className="apartmentAssets">
+               <div className="apartmentTags">
+                  {tags.map(tag=><li>{tag}</li>)}
+               </div>
+               <div className="apartmentRate">
+                  <RatingStars rate={apart.rating} />
+               </div>
             </div>
             <div className="apartmentCaracteristics">
                <div className="apartmentDescription">
-                  Description
-                  { apart.description }
+                  <h5>Description</h5>
+                  <img className="arrowDown" src={ ArrowDown } alt="Ouvrir" />
+                  <img className="arrowUp" src={ ArrowUp } alt="Fermer" />
+                  <p>{ apart.description }</p>
                </div>
                <div className="apartmentEquipments">
-                  Équipements
-                  { apart.equipments }
+                  <h5>Équipements</h5>
+                  <img className="arrowDown" src={ ArrowDown } alt="Ouvrir" />
+                  <img className="arrowUp" src={ ArrowUp } alt="Fermer" />
+                  <p>
+                     { equipments.map(equipment=><li>{equipment}</li>) }
+                  </p>
                </div>
             </div>
          </div>
