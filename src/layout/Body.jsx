@@ -1,3 +1,5 @@
+/************* Élément Body de la page d'accueil Home *************/
+
 // ----- Importations ----- //
 import React from "react";
 import Banner from "../components/Banner";
@@ -9,6 +11,7 @@ import "../styles/Body.scss";
 function Body() {
    return (
    <body>
+      {/* Insertion des composants Banner et Gallery */}
       <Banner />
       <Gallery />
    </body>)

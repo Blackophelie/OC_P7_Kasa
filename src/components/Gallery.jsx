@@ -1,7 +1,9 @@
+/************* Composant Gallery de la page Home *************/
+
 // ----- Importations ----- //
 import React from "react";
 import Card from "../components/Card";
-import Apartments from "../data/ApartmentDatas";
+import Apartments from "../datas/ApartmentsDatas.json";
 
 import "../styles/GalleryCard.scss";
 
@@ -9,13 +11,14 @@ import "../styles/GalleryCard.scss";
 function Gallery() {
    return (
       <div className="galleryContainer">
-         {Apartments.map(data =>{
+         {Apartments.map(apart=>{
             return (
+               // Contenu de chaque fiche en fonction de l'id de l'appartement
                <Card
-                  key={data.id}
-                  id={data.id}
-                  title={data.title}
-                  cover={data.cover}
+                  key={apart.id}
+                  id={apart.id}
+                  title={apart.title}
+                  cover={apart.cover}
                />
             )
          })}

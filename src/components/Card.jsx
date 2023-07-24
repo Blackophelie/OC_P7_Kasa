@@ -1,3 +1,5 @@
+/************* Composant Card de Gallery dans la page Home *************/
+
 // ----- Importations ----- //
 import React from "react";
 import { Link } from "react-router-dom";

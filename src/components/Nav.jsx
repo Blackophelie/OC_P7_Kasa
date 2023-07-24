@@ -1,3 +1,5 @@
+/************* Composant Nav de la Banner *************/
+
 // ------------ Importations ------------ //
 import React from "react";
 import { Link } from 'react-router-dom'

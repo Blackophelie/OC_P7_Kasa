@@ -1,3 +1,5 @@
+/************* Composant Bannière de l'élément Body de la page Home *************/
+
 // ----- Importations ----- //
 import React from "react";
 import "../styles/Banner.scss";

@@ -1,3 +1,5 @@
+/************* Élément Footer *************/
+
 // ----- Importations ----- //
 import React from "react";
 import Logo from "../assets/footerLogo.png";
@@ -10,7 +12,9 @@ function Footer() {
    return (
       <footer>
          <div>
+            {/* Insertion du lien vers la page d'accueil */}
             <Link to="/Home">
+               {/* Insertion du Logo du footer */}
                <img src={ Logo } alt="logo kasa" className="footerLogo" />
             </Link>
          </div>

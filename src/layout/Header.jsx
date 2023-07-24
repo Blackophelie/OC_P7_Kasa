@@ -1,3 +1,5 @@
+/************* Élément Header *************/
+
 // ----- Importations ----- //
 import React from "react";
 import Logo from "../assets/logo.svg";

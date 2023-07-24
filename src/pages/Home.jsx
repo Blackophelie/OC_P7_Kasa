@@ -1,17 +1,14 @@
+/************* Page Home ("Accueil") *************/
+
 // ----- Importations ----- //
 import React from "react";
-
-import Banner from "../components/Banner";
-import Gallery from "../components/Gallery";
-
-import "../styles/Home.scss";
+import Body from "../layout/Body";
 
 // ----- Création de la page d'accueil ----- //
 function Home() {
    return (
       <div className='homePage'>
-         <Banner />
-         <Gallery />
+         <Body />
       </div>
    )
 }

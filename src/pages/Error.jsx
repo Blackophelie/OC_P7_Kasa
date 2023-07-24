@@ -1,3 +1,5 @@
+/************* Page Error ("404") *************/
+
 // ----- Importations ----- //
 import React from "react";
 import "../styles/Error.scss";
