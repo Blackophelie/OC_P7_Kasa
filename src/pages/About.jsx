@@ -3,46 +3,29 @@
 // ----- Importations ----- //
 import React from "react";
 import "../styles/About.css";
-import ScrollingArrow from "../components/Arrow";
+import "../styles/Collapse.css";
+import Collapse from "../components/Collapse";
+import AboutImg from "../assets/photoAbout.png";
+import AboutLists from "../datas/AboutDatas.json"
 
 
 // ----- Création de la page à propos ----- //
-function About() {
+function About() {   
+
+   
    return (
       <div className="aboutBody">
-         <div className="aboutBanner"></div>
-         <ul className="aboutList">
-            <li>
-               <h3 className="collapseTitle">
-                  Fiabilité
-                  <ScrollingArrow />
-               </h3>
-               <p>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.</p>
-            </li>
-            <li>
-               <h3 className="collapseTitle">
-                  Service
-                  <ScrollingArrow />
-               </h3>
-               <p>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
-            </li>
-            <li>
-               <h3 className="collapseTitle">
-                  Respect
-                  <ScrollingArrow />
-               </h3>
-               <p>Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.</p>
-            </li>
-            <li>
-               <h3 className="collapseTitle">
-                  Sécurité
-                  <ScrollingArrow />
-               </h3>
-               <p>
-               La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.
-               </p>
-            </li>
-         </ul>         
+         <div className="aboutBanner">
+            <img className="aboutBannerImg" src={AboutImg} alt="Bannière à propos" />
+         </div>
+         {AboutLists.map(about=>{
+               const {title, content} = about;
+               return (
+                  <div className="aboutPart">
+                     <Collapse title={title} content={content} />                     
+                  </div>
+               )
+            })};
       </div>
    );
 };

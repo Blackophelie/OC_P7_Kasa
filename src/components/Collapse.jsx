@@ -22,7 +22,7 @@ function Collapse({ title, content }) {
             <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"}>
                <li className="collapseTxtList">
                   <span className="collapseTxtContent">
-                     {content}
+                     <p>{content}</p>
                   </span>
                </li>
             </ul>

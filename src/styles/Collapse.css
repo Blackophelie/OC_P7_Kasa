@@ -26,19 +26,19 @@
 
 .collapseTxtContainer {   
    overflow: hidden;
+   margin: -10px;
 }
+
 .visibleCollapseTxtContainer, .hiddenCollapseTxtContainer { 
    position: relative;
    z-index: -1;
-   height: 249px;
    text-align: justify;
    font-size: 500;
-   margin-top: -20px;
+   margin-top: -10px;
    margin-bottom: 40px;
    padding: 50px 20px 20px 20px;
    line-height: 26px;
    font-size: 18px;
-   border-radius: 0px 10px 10px 0px;  
    background-color: #F6F6F6;
    transition: transform 300ms ease-in-out;
 }

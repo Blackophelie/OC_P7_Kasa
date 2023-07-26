@@ -26,7 +26,7 @@ function ApartmentCard() {
    }
    
    return (
-      <div className="apartmentCard" key={ id }>
+      <div className="apartmentCard" >
          <div className="apartmentBody">
             <div className="carousel">
                <Carousel />

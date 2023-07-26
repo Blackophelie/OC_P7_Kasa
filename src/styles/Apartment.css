@@ -16,6 +16,7 @@
    display: flex;
    width: 70%;
    padding: 0 5%;
+   color: #FF6060;
 }
 
 .apartmentDesignation {
@@ -84,9 +85,10 @@
    display: flex;
    justify-content: center;
    width: 90%;
-   min-height: 400px;
+   /* min-height: 40px; */
    margin: 0 5%;
    gap: 5%;
+   color: #FF6060;
 }
 
 
