@@ -14,8 +14,8 @@ ReactDOM.render(
       <Routes>
          <Route path="/" element={ <Home /> } />
          <Route path="/About" element={ <About /> } />
-         <Route path="/Error" element={ <Error /> } />
          <Route path="/Apartment/:ApartmentId" element={ <Apartment /> } />
+         <Route path="*" element={ <Error /> } />
       </Routes>
    </React.StrictMode>,
    document.getElementById('root')

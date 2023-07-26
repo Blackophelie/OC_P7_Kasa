@@ -6,7 +6,7 @@ import Logo from "../assets/logo.svg";
 import Nav from "../components/Nav";
 import { Link } from "react-router-dom";
 
-import "../styles/Header.scss";
+import "../styles/Header.css";
 
 // ----- Création du Header ----- //
 function Header() {

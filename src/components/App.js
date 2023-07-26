@@ -4,7 +4,7 @@ import React from "react";
 // ----- Import des layouts ----- //
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
-import "../styles/App.scss";
+import "../styles/App.css";
 
 import Home from "../pages/Home";
 import About from "../pages/About";

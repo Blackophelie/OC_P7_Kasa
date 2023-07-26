@@ -53,4 +53,5 @@
    text-align: justify;
    background-color: #F6F6F6;
    border-radius: 0 0 10px 10px;
+   visibility: hidden;
 }

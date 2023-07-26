@@ -3,7 +3,6 @@ footer {
    text-align: center;
    font-family: 'Montserrat';
    background-color: black;
-   color: white;
 }
 
 .footerLogo {
@@ -12,4 +11,5 @@ footer {
 
 .copyright {
    padding-top: 50px;
+   color: white;
 }

@@ -3,13 +3,11 @@ header {
    justify-content: space-between;
    margin: 0 100px;
    padding-top: 40px;
-   color:#FF6060;
    align-content: center;
    align-items: center;
    font-size: 24px;
    font-weight: 500;
    text-align: right;
-   font-family: 'Montserrat';
 }
 
 .navLogo {

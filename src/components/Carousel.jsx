@@ -7,9 +7,8 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Apartment from '../datas/ApartmentsDatas.json';
-import arrowLeft from '../assets/arrow_back.png';
-import arrowRight from '../assets/arrow_forward.png';
-import "../styles/Carousel.scss"
+import RightArrow from "../assets/arrow_right.svg";
+import "../styles/Carousel.css"
 
 // ----- Cr&ation du composant Carousel pour la page Apartment ----- //
 function Carousel() { 
@@ -26,15 +25,19 @@ function Carousel() {
    }
 
    return (
-      <div className='carouselBody'>
-         {pictures.length > 1 &&(
-            <img className='arrowLeft' src={arrowLeft} alt='flèche vers la gauche' onClick={LeftSliding}/>
-         )}
-
-         {pictures.length > 1 &&(
-            <img className='arrowRight' src={arrowRight} alt='flèche vers la droite' onClick={RightSliding}/>
-         )}
-
+      <div className="carouselBody">
+         <div className="arrows">            
+            <div className="goToLeft">
+               {pictures.length > 1 &&(
+                  <img className="leftArrow" src={RightArrow} alt='flèche vers la gauche' onClick={LeftSliding}/>
+               )}
+            </div>
+            <div className="goToRight">
+               {pictures.length > 1 &&(
+                  <img className="rightArrow" src={RightArrow} alt='flèche vers la droite' onClick={RightSliding}/>
+               )}
+            </div>
+         </div>
          {pictures.map((picture, index) =>{
             return(
                <div key={index}>

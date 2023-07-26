@@ -2,7 +2,7 @@
 
 // ----- Importations ----- //
 import React from "react";
-import "../styles/Error.scss";
+import "../styles/Error.css";
 
 import { Link } from "react-router-dom";
 

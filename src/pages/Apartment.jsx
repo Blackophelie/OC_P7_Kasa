@@ -3,15 +3,11 @@
 // ----- Importations ----- //
 import React from "react";
 import ApartmentsList from "../datas/ApartmentsDatas.json";
-import "../styles/Apartment.scss";
+import "../styles/Apartment.css";
 import Error from "../pages/Error";
 import Carousel from "../components/Carousel";
 import RatingStars from "../components/Rate";
-import ArrowDown from "../assets/arrow_down.png";
-import ArrowUp from "../assets/arrow_up.png";
-
-
-
+import Collapse from "../components/Collapse";
 
 // ----- Création de la fiche appartement ----- //
 function ApartmentCard() {
@@ -20,10 +16,10 @@ function ApartmentCard() {
    let idUrl = new URL(url)
    // Ajout de l'id dans l'adresse url
    let id = idUrl.pathname.replace('/Apartment/', '')
-    
+   
+   
    const apart = ApartmentsList.find((apart) => apart.id === id);
-   const tags = apart.tags;
-   const equipments = apart.equipments;
+   const {title, location, tags, host, rating, description, equipments} = apart || {};
 
    if (!apart) {
       return <Error />
@@ -38,44 +34,73 @@ function ApartmentCard() {
             <div className="designation">
                <div className="apartmentDesignation">
                   <h3 className="apartmentTitle">
-                     { apart.title }
+                     { title }
                   </h3> 
                   <h4 className="apartmentLocation">
-                     { apart.location }
+                     { location }
                   </h4>
                </div>
                <div className="apartmentHost">
                   <div className="hostName">
-                     { apart.host.name }
+                     { host.name }
                   </div>
                   <img className="hostPicture"
-                  src= { apart.host.picture } alt="Votre hôte"/>
+                  src= { host.picture } alt="Votre hôte"/>
                </div>
             </div>
             <div className="apartmentAssets">
                <div className="apartmentTags">
-                  {tags.map(tag=><li>{tag}</li>)}
+                  <ul>
+                     {tags.map(tag=><li>{tag}</li>)}
+                  </ul>
                </div>
                <div className="apartmentRate">
-                  <RatingStars rate={apart.rating} />
+                  <RatingStars rate={rating} />
                </div>
             </div>
+
             <div className="apartmentCaracteristics">
+               <Collapse title="Description" content={description} />
+               <Collapse 
+                  title="Équipements" 
+                  content={
+                     equipments &&
+                     equipments.map((equipments, index) => {
+                        return (
+                           <ul key={equipments + index}>
+                              <li>{equipments}</li>
+                           </ul>
+                        )
+                     })
+                  } 
+               />
+
+            </div>
+
+
+
+            {/* <div className="apartmentCaracteristics">
                <div className="apartmentDescription">
-                  <h5>Description</h5>
-                  <img className="arrowDown" src={ ArrowDown } alt="Ouvrir" />
-                  <img className="arrowUp" src={ ArrowUp } alt="Fermer" />
-                  <p>{ apart.description }</p>
+                  <h5>
+                     Description
+                     <div className="collapseTitle">
+                        <Collapse />
+                     </div>
+                  </h5>
+                  <p>{ description }</p>
                </div>
                <div className="apartmentEquipments">
-                  <h5>Équipements</h5>
-                  <img className="arrowDown" src={ ArrowDown } alt="Ouvrir" />
-                  <img className="arrowUp" src={ ArrowUp } alt="Fermer" />
+               <h5>
+                     Équipements
+                     <Collapse />
+                  </h5>
                   <p>
-                     { equipments.map(equipment=><li>{equipment}</li>) }
+                     <ul>
+                        { equipments.map(equipment=><li>{equipment}</li>) }
+                     </ul>
                   </p>
                </div>
-            </div>
+            </div> */}
          </div>
       </div>
    )

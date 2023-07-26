@@ -3,7 +3,7 @@
 // ----- Importations ----- //
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/GalleryCard.scss";
+import "../styles/GalleryCard.css";
 
 // ----- Création d'une fiche appartement ----- //
 function Card({ id, title, cover }) {

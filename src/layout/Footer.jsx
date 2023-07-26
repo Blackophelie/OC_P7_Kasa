@@ -5,7 +5,7 @@ import React from "react";
 import Logo from "../assets/footerLogo.png";
 import { Link } from "react-router-dom";
 
-import "../styles/Footer.scss";
+import "../styles/Footer.css";
 
 // ----- Création du footer ----- //
 function Footer() {
