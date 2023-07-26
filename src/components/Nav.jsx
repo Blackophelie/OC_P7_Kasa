@@ -9,7 +9,7 @@ import '../styles/Nav.css'
 function Nav() {
     return (
         <nav>
-            <div className='navBar'>
+            <div className='navBarLinks'>
                 <Link to="/Home">Accueil</Link>
                 <Link to="/About">A Propos</Link>
             </div>

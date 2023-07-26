@@ -2,11 +2,14 @@
 .bannerTitle {
    display: flex;
    justify-content: center;
+   text-align: center;
    height: 223px;
-   width: 1240px;
+   width: 90%;
    margin: 40px auto;
    background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url("../assets/photoBanner.png");
-   border-radius: 25px;   
+   border-radius: 25px;
+   background-size: cover;
+   background-repeat: no-repeat;
 }
 
 /* Texte de la bannière */
@@ -16,4 +19,23 @@
    font-family: 'Montserrat';
    font-weight: 500;
    font-size: 48px;
+}
+
+
+/* ----- Responsive -----*/
+
+@media only screen and (max-width:768px) {
+    .bannerTitle h1 {
+      font-size: 42px;
+    }
+}
+@media only screen and (max-width:375px) {
+   .bannerTitle {
+      height: 111px;
+   }
+   
+   .bannerTitle h1 {
+      margin-top: 30px;
+      font-size: 24px;
+   }
 }

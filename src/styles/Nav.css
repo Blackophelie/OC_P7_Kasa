@@ -6,11 +6,20 @@
    width: 309px;
 }
 
-.navBar a {
+.navBarLinks a {
    text-decoration: none;
    color: #FF6060;
 }
 
-.navBar a:hover {
+.navBarLinks a:hover {
    text-decoration: underline;
+}
+
+
+/* ----- Responsive -----*/
+
+@media only screen and (max-width:375px) {
+   .navBar {
+      
+   }
 }

@@ -91,4 +91,11 @@
    color: #FF6060;
 }
 
+/* ----- Responsive ----- */
 
+@media only screen and (max-width:768px) {
+    
+}
+@media only screen and (max-width:375px) {
+    
+}

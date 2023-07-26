@@ -13,3 +13,9 @@ footer {
    padding-top: 50px;
    color: white;
 }
+
+/* ----- Responsive -----*/
+
+@media only screen and (max-width:375px) {
+    
+}

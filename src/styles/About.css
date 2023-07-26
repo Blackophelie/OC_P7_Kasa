@@ -13,7 +13,7 @@
    margin: 2% 5%;
 }
 
-.aboutBanner img {
+.aboutBannerImg {
    width: 100%;
    border-radius: 25px;
    filter: brightness(0.7);
@@ -35,3 +35,12 @@
    color: #FF6060;
 }
 
+@media only screen and (max-width:375px) {
+   .aboutBanner {
+      height: 223px;    
+      text-align: center;  
+   }
+
+
+
+}

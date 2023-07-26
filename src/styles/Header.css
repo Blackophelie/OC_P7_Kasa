@@ -15,3 +15,47 @@ header {
    height: 68px;
 }
 
+.navBar {
+   width: 50%;
+   justify-content: flex-end;
+}
+
+.navBar a{
+   padding-left: 50px;
+}
+
+
+@media only screen and (max-width:912px) {
+   header {
+      margin: 0 50px;
+      padding-top: 30px;
+      font-size: 22px;
+   }
+}
+
+@media only screen and (max-width:768px) {
+   header {
+      margin: 0 40px;
+      padding-top: 20px;
+      font-size: 20px;
+   }
+}
+
+@media only screen and (max-width:375px) {
+   header {
+      margin: 0 20px;
+      padding-top: 20px;
+      font-size: 12px;
+   }
+
+   .navLogo {
+      width: 145px;
+      height: 47px;
+   }
+   
+   .navBar a{
+      padding-left: 20px; 
+    }
+ 
+
+}
