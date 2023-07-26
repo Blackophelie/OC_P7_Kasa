@@ -11,6 +11,7 @@
    object-fit: cover;
 }
 
+
 .carouselImgNumber {
    font-size: 18px;
    font-family: "Montserrat";
@@ -25,6 +26,7 @@
    position: absolute;
    z-index: 1;
    top: 33%;
+   cursor: pointer;
 }
 
 .leftArrow {
@@ -50,8 +52,4 @@
 
 .goToLeft, .goToRight {
    display: flex;
-}
-
-.goToLeft {
-   margin-bottom: 20px;
 }

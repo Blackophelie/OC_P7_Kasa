@@ -16,11 +16,11 @@ function Carousel() {
    const {pictures} = Apartment.find((apart) => apart.id === id);
    const [current, setCurrent] = useState(0);
 
-   const RightSliding = () =>{
+   const RightSliding = () => {
       setCurrent(current === pictures.length -1 ? 0 : current +1);
    }
 
-   const LeftSliding = () =>{
+   const LeftSliding = () => {
       setCurrent(current === 0 ? pictures.length -1 : current -1);
    }
 
@@ -40,7 +40,7 @@ function Carousel() {
          </div>
          {pictures.map((picture, index) =>{
             return(
-               <div key={index}>
+               <div className="carouselSlides" key={index}>
                   {index === current &&(
                      <img className='carouselImg' src={picture} alt={pictures.description}/>
                   )}

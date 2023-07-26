@@ -14,7 +14,7 @@ function Gallery() {
          {Apartments.map(apart=>{
             return (
                // Contenu de chaque fiche en fonction de l'id de l'appartement
-               <Card
+               <Card className="galleryCard"
                   key={apart.id}
                   id={apart.id}
                   title={apart.title}
