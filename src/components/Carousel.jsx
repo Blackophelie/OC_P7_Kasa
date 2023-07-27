@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 
 import Apartment from '../datas/ApartmentsDatas.json';
 import RightArrow from "../assets/arrow_right.svg";
-import "../styles/Carousel.css"
+import "../styles/components/Carousel.css"
 
 // ----- Cr&ation du composant Carousel pour la page Apartment ----- //
 function Carousel() { 

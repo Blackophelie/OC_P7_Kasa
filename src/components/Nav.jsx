@@ -3,7 +3,7 @@
 // ------------ Importations ------------ //
 import React from "react";
 import { Link } from 'react-router-dom'
-import '../styles/Nav.css'
+import '../styles/components/Nav.css'
 
 // ----- Création de la navigation du Header ----- //
 function Nav() {

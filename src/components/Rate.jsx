@@ -10,7 +10,7 @@ function RatingStars(rate) {
       rangeElem > rate.rate ? (
          <img className="emptyStars" src={InactiveStar} alt="étoile vide" key={key} />               
          ) : (
-         <img classname="fullStars" src={ActiveStar} alt="étoile" key={key} />
+         <img classname="fullStars" src={ActiveStar} alt="étoilé" key={key} />
       )
    );
 };

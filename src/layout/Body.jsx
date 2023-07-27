@@ -10,11 +10,11 @@ import Gallery from "../components/Gallery";
 // ----- Création du corps de la page ----- //
 function Body() {
    return (
-   <body>
+   <div className="body">
       {/* Insertion des composants Banner et Gallery */}
       <Banner />
       <Gallery />
-   </body>)
+   </div>)
 }
 
 // ----- Export du corps de la page ----- //

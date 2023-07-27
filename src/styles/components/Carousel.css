@@ -22,6 +22,7 @@
    color: #FFFFFF;
 }
 
+
 .leftArrow, .rightArrow {
    position: absolute;
    z-index: 1;
@@ -35,7 +36,8 @@
 }
 
 .rightArrow {
-   padding: 20px 0px;
+   right: 5px;
+   padding: 28px 0px;
    rotate: 0deg;
 }
 
@@ -45,11 +47,29 @@
    justify-content: space-between;
    position: absolute;
    top: 20%;
-   width: 92%;
+   width: 100%;
    height: 120px;
 
 }
 
 .goToLeft, .goToRight {
    display: flex;
+}
+
+@media only screen and (max-width:375px) {
+   .carouselImg {
+     height: 255px;
+   }
+
+   .leftArrow, .rightArrow {
+      height: 24px;
+   }
+
+   .leftArrow {
+      padding: 20px 5px;
+   }
+
+   .carouselImgNumber {
+      visibility: hidden;
+   }
 }

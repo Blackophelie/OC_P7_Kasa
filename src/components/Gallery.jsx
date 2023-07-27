@@ -5,7 +5,7 @@ import React from "react";
 import Card from "../components/Card";
 import Apartments from "../datas/ApartmentsDatas.json";
 
-import "../styles/GalleryCard.css";
+import "../styles/components/GalleryCard.css";
 
 // ----- Création de la galerie ----- //
 function Gallery() {

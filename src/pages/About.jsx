@@ -2,8 +2,8 @@
 
 // ----- Importations ----- //
 import React from "react";
-import "../styles/About.css";
-import "../styles/Collapse.css";
+import "../styles/pages/About.css";
+import "../styles/components/Collapse.css";
 import Collapse from "../components/Collapse";
 import AboutImg from "../assets/photoAbout.png";
 import AboutLists from "../datas/AboutDatas.json"

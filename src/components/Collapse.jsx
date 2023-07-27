@@ -2,7 +2,7 @@
 
 // ----- Importations ----- //
 import React, {useState} from "react";
-import "../styles/Collapse.css";
+import "../styles/components/Collapse.css";
 import ScrollingArrow from "../components/Arrow";
 
 // ----- Création la flèche de déroulement ----- //

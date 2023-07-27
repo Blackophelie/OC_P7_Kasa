@@ -1,0 +1,50 @@
+.errorBody {
+   text-align: center;
+   text-decoration: none;
+   margin-bottom: 100px;
+   color: #FF6060;
+}
+
+.errorBody h1 {
+   font-weight: 700;
+   font-size: 288px;
+   margin-bottom: 50px;
+}
+
+.errorBody h2 {
+   display: flex;
+   justify-content: center;
+   white-space: nowrap;
+   font-size: 36px;
+   margin-bottom: 100px;
+}
+
+br {
+   display: none;
+}
+
+.errorBody a {
+   color: #FF6060;
+   font-size: 18px;
+   text-decoration: underline solid #FF6060;
+}
+
+@media only screen and (max-width:376px) {
+   .errorBody h1 {
+      font-size: 98px;
+      margin-top: 40%;
+   }
+
+   .errorBody h2 {
+      font-size: 18px;
+      height: 52px;
+   }
+
+   br {
+      display: inherit;
+   }
+
+   .errorBody a {
+      font-size: 14px;
+   }
+}

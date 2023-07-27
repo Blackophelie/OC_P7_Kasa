@@ -3,7 +3,7 @@
 // ----- Importations ----- //
 import React from "react";
 import ApartmentsList from "../datas/ApartmentsDatas.json";
-import "../styles/Apartment.css";
+import "../styles/pages/Apartment.css";
 import Error from "../pages/Error";
 import Carousel from "../components/Carousel";
 import RatingStars from "../components/Rate";
@@ -27,10 +27,10 @@ function ApartmentCard() {
    
    return (
       <div className="apartmentCard" >
-         <div className="apartmentBody">
             <div className="carousel">
                <Carousel />
             </div>
+         <div className="apartmentBody">
             <div className="designation">
                <div className="apartmentDesignation">
                   <h3 className="apartmentTitle">

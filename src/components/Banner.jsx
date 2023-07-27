@@ -2,7 +2,7 @@
 
 // ----- Importations ----- //
 import React from "react";
-import "../styles/Banner.css";
+import "../styles/components/Banner.css";
 
 // ----- Création de la bannière ----- //
 function Banner() {

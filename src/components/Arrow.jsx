@@ -2,7 +2,7 @@
 
 // ----- Importations ----- //
 import React, { useState } from "react";
-import "../styles/Arrow.css";
+import "../styles/components/Arrow.css";
 import Arrow from "../assets/arrow_down.svg";
 
 // ----- Création la flèche de déroulement ----- //

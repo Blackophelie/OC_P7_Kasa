@@ -4,12 +4,13 @@
    justify-content: center;
    text-align: center;
    height: 223px;
-   width: 90%;
+   width: 94%;
    margin: 40px auto;
-   background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url("../assets/photoBanner.png");
    border-radius: 25px;
+   background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url("../../assets/photoBanner.png");
    background-size: cover;
    background-repeat: no-repeat;
+   background-position: center;
 }
 
 /* Texte de la bannière */
@@ -32,6 +33,7 @@
 @media only screen and (max-width:375px) {
    .bannerTitle {
       height: 111px;
+      width: 90%;
    }
    
    .bannerTitle h1 {
