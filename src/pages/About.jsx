@@ -18,14 +18,16 @@ function About() {
          <div className="aboutBanner">
             <img className="aboutBannerImg" src={AboutImg} alt="Bannière à propos" />
          </div>
-         {AboutLists.map(about=>{
-               const {title, content} = about;
-               return (
-                  <div className="aboutPart">
-                     <Collapse title={title} content={content} />                     
-                  </div>
-               )
-            })};
+         <div className="aboutParts">
+            {AboutLists.map(about=>{
+                  const {title, content} = about;
+                  return (
+                     <div className="aboutPart">
+                        <Collapse title={title} content={content} />                     
+                     </div>
+                  )
+               })};
+         </div>
       </div>
    );
 };

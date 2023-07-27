@@ -1,6 +1,7 @@
 .collapse {
    width: 100%;
    overflow: hidden;
+   margin-bottom: 20px;
 }
 
 .collapseBtn {
@@ -24,12 +25,12 @@
    padding-left: 10px;
 }
 
-.collapseTxtContainer {   
+.collapseTxtContainer, .hiddenTxtContainer {   
    overflow: hidden;
    margin: -10px;
 }
 
-.visibleCollapseTxtContainer, .hiddenCollapseTxtContainer { 
+.visibleCollapseTxtContainer, .collapseTxtContainer .hiddenCollapseTxtContainer { 
    position: relative;
    z-index: -1;
    text-align: justify;
@@ -40,15 +41,39 @@
    line-height: 26px;
    font-size: 18px;
    background-color: #F6F6F6;
+   border-radius: 10px;
    transition: transform 300ms ease-in-out;
 }
 
+.hiddenCollapseTxtContainer .collapseTxtList {
+   visibility: hidden;
+}
+
+.collapseTxtContainer {
+   height:auto;
+   
+}
 .visibleCollapseTxtContainer {
+   height: auto;
    transform: translateY(0%);
 }
 
-.hiddenCollapseTxtContainer {
+.hiddenCollapseTxtContainer {  
+   height: 0; 
    transform: translateY(-100%);
+}
+
+@media only screen and (max-width:375px) {
+   .collapseBtn {
+      height: 30px;
+      font-size: 14px;
+   }
+
+   .scrollingArrow img {
+      width: 18.5px;
+      height: 18.5px;
+   }
+
 }
 
 

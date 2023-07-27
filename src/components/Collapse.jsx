@@ -18,7 +18,7 @@ function Collapse({ title, content }) {
                className={open ?"arrowUp" : "arrowDown"} 
                alt={open ? "Flèche vers le haut" : "Flèche vers le bas"} />
          </div>
-         <div className="collapseTxtContainer">
+         <div className='"collapseTxtContainer" + {open ? "visibleTxtContainer" : "hiddenTxtContainer"}'>
             <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"}>
                <li className="collapseTxtList">
                   <span className="collapseTxtContent">

@@ -17,5 +17,8 @@ footer {
 /* ----- Responsive -----*/
 
 @media only screen and (max-width:375px) {
-    
+    .copyright {
+      font-size: 12px;
+      padding-top: 20px;
+    }
 }
