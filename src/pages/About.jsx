@@ -6,7 +6,7 @@ import "../styles/pages/About.css";
 import "../styles/components/Collapse.css";
 import Collapse from "../components/Collapse";
 import AboutImg from "../assets/photoAbout.png";
-import AboutLists from "../datas/AboutDatas.json"
+import AboutLists from "../data/AboutDatas.json"
 
 
 // ----- Création de la page à propos ----- //
@@ -22,8 +22,8 @@ function About() {
             {AboutLists.map(about=>{
                   const {title, content} = about;
                   return (
-                     <div className="aboutPart">
-                        <Collapse title={title} content={content} />                     
+                     <div className="aboutPart" title={title}> 
+                        <Collapse title={title} content={content} key={content} />                     
                      </div>
                   )
                })};

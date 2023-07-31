@@ -6,6 +6,11 @@
    width: 309px;
 }
 
+.navBarLinks {
+   display: flex;
+   gap: 50px;
+}
+
 .navBarLinks a {
    text-decoration: none;
    color: #FF6060;
@@ -19,7 +24,7 @@
 /* ----- Responsive -----*/
 
 @media only screen and (max-width:375px) {
-   .navBar {
-      
+   .navBarLinks {
+      gap: 20px;
    }
 }

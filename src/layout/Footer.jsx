@@ -11,13 +11,13 @@ import "../styles/layout/Footer.css";
 function Footer() {
    return (
       <footer>
-         <div>
+         {/* <div> */}
             {/* Insertion du lien vers la page d'accueil */}
             <Link to="/Home">
                {/* Insertion du Logo du footer */}
                <img src={ Logo } alt="logo kasa" className="footerLogo" />
             </Link>
-         </div>
+         {/* </div> */}
          <div className="copyright">
             @ 2020 Kasa. All rights reserved
          </div>

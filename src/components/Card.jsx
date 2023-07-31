@@ -6,13 +6,12 @@ import { Link } from "react-router-dom";
 import "../styles/components/GalleryCard.css";
 
 // ----- Création d'une fiche appartement ----- //
-function Card({ id, title, cover }) {
+function Card({id, title, cover}) {
    return (
-      <Link to={"../Apartment/" + id} className="galleryCard">
+      <Link to={`/Apartment/${id}`} className="galleryCard" id={id}>
          <div className="cardPicture">
-            <img src={cover} alt={title} />
-            <div className="diapo imgFilter"></div>
-            <h3>{title}</h3>
+            <img src={cover} alt={title} cover={cover} />
+            <h3 title={title}>{title}</h3>
          </div>
       </Link>
    );

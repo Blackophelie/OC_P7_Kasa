@@ -2,108 +2,99 @@
 
 // ----- Importations ----- //
 import React from "react";
-import ApartmentsList from "../datas/ApartmentsDatas.json";
+// import ApartmentsList from "../datas/ApartmentsDatas.json";
 import "../styles/pages/Apartment.css";
-import Error from "../pages/Error";
+// import Error from "../pages/Error";
 import Carousel from "../components/Carousel";
+// import Designation from "../components/Designation";
+// import Caracteristics from "../components/Caracteristics";
 import RatingStars from "../components/Rate";
 import Collapse from "../components/Collapse";
+import { useParams } from "react-router-dom";
+// import useFetch from "../components/UseFetch";
+import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+// import props from "prop-types";
 
 // ----- Création de la fiche appartement ----- //
 function ApartmentCard() {
-   // Création de l'adresse url de l'appartement correspondant
-   let url = document.location.href
-   let idUrl = new URL(url)
-   // Ajout de l'id dans l'adresse url
-   let id = idUrl.pathname.replace('/Apartment/', '')
-   
-   
-   const apart = ApartmentsList.find((apart) => apart.id === id);
+   const {id}  = useParams();
+   const {apart} = useState();
    const {title, location, tags, host, rating, description, equipments} = apart || {};
-
-   if (!apart) {
-      return <Error />
-   }
+   // const host = apart.host || {};
+   const { name, picture } = host || {};
+   console.log(apart);
    
+   // const apartId = apart.id;
+   // const navigate = useNavigate();
+   // let { data: aparts, isLoading, error} = useFetch("http://localhost:3000/datas/ApartmentsDatas.json")
+   // console.log(aparts);
+   // const apart = aparts.find(apart => apart.id === id );
+   // const { name, location } = apart.id === apartId;
+   // const [apart, setApart] = useState([]);
+   // const aparts = useFetch("http://localhost:3000/datas/ApartmentsDatas.json")
+   
+   useEffect(() => {
+      fetch("http://localhost:3000/Apartment/:id")
+         .then ((res) => res.json())
+         .then (apart => (apart))
+         .catch((error) => error)
+   }, []);
+   // useEffect(() =>{
+      //    if (error) {
+         //      navigate("/error")
+         //    }
+         // }, [error, navigate])
+         // console.log(apart);
+         // console.log(apart);
+
+   // if (isLoading || error) return <div>Chargement en cours</div>
+
    return (
-      <div className="apartmentCard" >
-            <div className="carousel">
-               <Carousel />
-            </div>
-         <div className="apartmentBody">
-            <div className="designation">
-               <div className="apartmentDesignation">
-                  <h3 className="apartmentTitle">
-                     { title }
-                  </h3> 
-                  <h4 className="apartmentLocation">
-                     { location }
-                  </h4>
-               </div>
-               <div className="apartmentHost">
-                  <div className="hostName">
-                     { host.name }
-                  </div>
-                  <img className="hostPicture"
-                  src= { host.picture } alt="Votre hôte"/>
-               </div>
-            </div>
-            <div className="apartmentAssets">
-               <div className="apartmentTags">
-                  <ul>
-                     {tags.map(tag=><li>{tag}</li>)}
-                  </ul>
-               </div>
-               <div className="apartmentRate">
-                  <RatingStars rate={rating} />
-               </div>
-            </div>
-
-            <div className="apartmentCaracteristics">
-               <Collapse title="Description" content={description} />
-               <Collapse 
-                  title="Équipements" 
-                  content={
-                     equipments &&
-                     equipments.map((equipments, index) => {
-                        return (
-                           <ul key={equipments + index}>
-                              <li>{equipments}</li>
-                           </ul>
-                        )
-                     })
-                  } 
-               />
-
-            </div>
-
-
-
-            {/* <div className="apartmentCaracteristics">
-               <div className="apartmentDescription">
-                  <h5>
-                     Description
-                     <div className="collapseTitle">
-                        <Collapse />
-                     </div>
-                  </h5>
-                  <p>{ description }</p>
-               </div>
-               <div className="apartmentEquipments">
-               <h5>
-                     Équipements
-                     <Collapse />
-                  </h5>
-                  <p>
-                     <ul>
-                        { equipments.map(equipment=><li>{equipment}</li>) }
-                     </ul>
-                  </p>
-               </div>
-            </div> */}
+      <div className="apartmentCard" key={id} >
+         <div className="carousel">
+            <Carousel  />
          </div>
+         {apart && apart.map((apart) => {
+            return (
+               <div className="apartmentBody">
+                  <div className="designation">
+                     <div className="apartmentDesignation">
+                        <h3 className="apartmentTitle" title={title}>
+                           { title }
+                        </h3> 
+                        <h4 className="apartmentLocation" location={location}>
+                           { location }
+                        </h4>
+                     </div>
+                     <div className="apartmentHost">
+                        <div className="hostName" name={name}>
+                           {name }
+                        </div>
+                        <img className="hostPicture"src= { picture } alt={name + "sera votre hôte"} picture={picture}/>
+                     </div>
+                  </div>
+                  <div className="apartmentAssets">
+                     <ul className="apartmentTags">
+                        {tags && tags.map((tag, index)=><li tag={tag + index} key={index}>{tag}</li>)}
+                     </ul>
+                     <div className="apartmentRate" >
+                        <RatingStars rate={rating} />
+                     </div>
+                  </div> 
+                  <div className="apartmentCaracteristics">
+                     <Collapse title="Description" content={description} />
+                     <Collapse title="Équipements" content={
+                        equipments && equipments.map(
+                           (equipments, index) => <ul key={equipments + index}><li key={index}>{equipments}</li></ul>)
+                     }/>
+                  </div>
+               </div>
+            )
+         })}
       </div>
-   )
+   );
 };
 
 export default ApartmentCard;

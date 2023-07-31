@@ -62,7 +62,7 @@
    margin: 0 5%;
 }
 
-.apartmentTags ul {
+.apartmentTags {
    display: flex;
    flex-direction: row;
    padding: 20px 0px;

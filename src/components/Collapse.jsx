@@ -13,7 +13,7 @@ function Collapse({ title, content }) {
    return (
       <div className="collapse">
          <div className="collapseBtn" onClick={toggle}>
-            <p className="collapseBtnTxt">{title}</p>
+            <p className="collapseBtnTxt" title={title}>{title}</p>
             <ScrollingArrow 
                className={open ?"arrowUp" : "arrowDown"} 
                alt={open ? "Flèche vers le haut" : "Flèche vers le bas"} />
@@ -22,7 +22,7 @@ function Collapse({ title, content }) {
             <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"}>
                <li className="collapseTxtList">
                   <span className="collapseTxtContent">
-                     <p>{content}</p>
+                     <div content={content}>{content}</div>
                   </span>
                </li>
             </ul>

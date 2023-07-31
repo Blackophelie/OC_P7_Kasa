@@ -40,20 +40,32 @@
    border-radius: 10px;
 }
 
-.galleryCard .imgFilter {
+.galleryCard .cardPicture:after {
+   content: '';
    position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
    z-index: 0;
-   height: 340px;
-   width: 340px;
-   background: linear-gradient(#FFFFFF, #000000);
    border-radius: 10px;
-   opacity: 50%;
-   animation: offCardOpacity 0.5s ease-in-out;
+   transform: opacity(1);
+   transition: transform 0.3s ease-in-out;
 }
 
-.galleryCard .imgFilter:hover {
-   animation: overCardOpacity 0.5s ease-in-out;
-   opacity: 0%;
+.galleryCard .cardPicture:hover:after {
+   content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: none;
+   z-index: 0;
+   border-radius: 10px;
+   transform: opacity(0);
+   transition: transform 0.3s ease-in-out;
 }
 
 .galleryCard h3 {

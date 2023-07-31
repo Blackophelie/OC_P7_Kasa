@@ -38,14 +38,15 @@ function Carousel() {
                )}
             </div>
          </div>
+         
          {pictures.map((picture, index) =>{
             return(
-               <div className="carouselSlides" key={index}>
+               <div className="carouselSlides" index={index}>
                   {index === current &&(
-                     <img className='carouselImg' src={picture} alt={pictures.description}/>
+                     <img className='carouselImg' src={picture} alt={pictures.description} pictures={pictures} />
                   )}
                   {index === current &&(
-                     <span className='carouselImgNumber'>
+                     <span className='carouselImgNumber'alt={(current +1)+" sur "+(pictures.length)} length={pictures.length} >
                         {current +1}/{pictures.length}
                      </span>
                   )}

@@ -7,9 +7,9 @@ import Body from "../layout/Body";
 // ----- Création de la page d'accueil ----- //
 function Home() {
    return (
-      <div className='homePage'>
-         <Body />
-      </div>
+      // <div >
+         <Body className="homePage" />
+      // </div>
    )
 }
 
