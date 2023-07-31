@@ -14,7 +14,7 @@ import Error from "../pages/Error";
 // ----- Importation du routeur ----- //
 import { Routes, Route } from "react-router-dom";
 
-// ----- Création du composant App ----- //
+// ----- Création du composant App contenant le Router ----- //
 function App() {
   return (
     <div className="app">
@@ -24,7 +24,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/Apartment/:id" element={<ApartmentCard />} />
-        <Route path="/*" element={<Error />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </div>

@@ -23,7 +23,7 @@ function About() {
                   const {title, content} = about;
                   return (
                      <div className="aboutPart" title={title}> 
-                        <Collapse title={title} content={content} key={content} />                     
+                        <Collapse title={title} content={content}/>                     
                      </div>
                   )
                })};

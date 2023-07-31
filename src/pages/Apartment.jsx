@@ -2,97 +2,80 @@
 
 // ----- Importations ----- //
 import React from "react";
-// import ApartmentsList from "../datas/ApartmentsDatas.json";
 import "../styles/pages/Apartment.css";
-// import Error from "../pages/Error";
+import "../styles/components/Carousel.css"
 import Carousel from "../components/Carousel";
-// import Designation from "../components/Designation";
-// import Caracteristics from "../components/Caracteristics";
 import RatingStars from "../components/Rate";
 import Collapse from "../components/Collapse";
 import { useParams } from "react-router-dom";
-// import useFetch from "../components/UseFetch";
-import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-// import props from "prop-types";
+import { useState, useEffect } from "react";
+import Error from "../pages/Error";
 
 // ----- Création de la fiche appartement ----- //
 function ApartmentCard() {
    const {id}  = useParams();
-   const {apart} = useState();
-   const {title, location, tags, host, rating, description, equipments} = apart || {};
-   // const host = apart.host || {};
-   const { name, picture } = host || {};
-   console.log(apart);
-   
-   // const apartId = apart.id;
-   // const navigate = useNavigate();
-   // let { data: aparts, isLoading, error} = useFetch("http://localhost:3000/datas/ApartmentsDatas.json")
-   // console.log(aparts);
-   // const apart = aparts.find(apart => apart.id === id );
-   // const { name, location } = apart.id === apartId;
-   // const [apart, setApart] = useState([]);
-   // const aparts = useFetch("http://localhost:3000/datas/ApartmentsDatas.json")
+   const { isLoading } = useState(true);
+   const [apart, setApart] = useState({});
    
    useEffect(() => {
-      fetch("http://localhost:3000/Apartment/:id")
-         .then ((res) => res.json())
-         .then (apart => (apart))
-         .catch((error) => error)
-   }, []);
-   // useEffect(() =>{
-      //    if (error) {
-         //      navigate("/error")
-         //    }
-         // }, [error, navigate])
-         // console.log(apart);
-         // console.log(apart);
-
-   // if (isLoading || error) return <div>Chargement en cours</div>
+      const getApart = async () => {
+         const res = await fetch("../datas/ApartmentsDatas.json")
+         .then(res => res.json());
+         
+         const data = res.find(apart => apart.id === id);
+         
+         if(!data) {
+            <Error />
+         }
+         setApart(data);
+      }
+      getApart();
+   }, [id]);
+      
+   if (isLoading) return <h3>Chargement...</h3>
+   
+   const host = apart.host || {};
 
    return (
-      <div className="apartmentCard" key={id} >
-         <div className="carousel">
-            <Carousel  />
+      <div className="apartmentCard">
+         <div className="carousel" >
+            <Carousel key={apart.pictures} />
          </div>
-         {apart && apart.map((apart) => {
-            return (
-               <div className="apartmentBody">
-                  <div className="designation">
-                     <div className="apartmentDesignation">
-                        <h3 className="apartmentTitle" title={title}>
-                           { title }
-                        </h3> 
-                        <h4 className="apartmentLocation" location={location}>
-                           { location }
-                        </h4>
-                     </div>
-                     <div className="apartmentHost">
-                        <div className="hostName" name={name}>
-                           {name }
-                        </div>
-                        <img className="hostPicture"src= { picture } alt={name + "sera votre hôte"} picture={picture}/>
-                     </div>
+         <div className="apartmentBody">
+            <div className="designation">
+               <div className="apartmentDesignation">
+                  <h3 className="apartmentTitle">
+                     { apart.title }
+                  </h3> 
+                  <h4 className="apartmentLocation">
+                     { apart.location }
+                  </h4>
+               </div>
+               <div className="apartmentHost">
+                  <div className="hostName" name={ host.name }>
+                     { host.name }
                   </div>
-                  <div className="apartmentAssets">
-                     <ul className="apartmentTags">
-                        {tags && tags.map((tag, index)=><li tag={tag + index} key={index}>{tag}</li>)}
-                     </ul>
-                     <div className="apartmentRate" >
-                        <RatingStars rate={rating} />
-                     </div>
-                  </div> 
-                  <div className="apartmentCaracteristics">
-                     <Collapse title="Description" content={description} />
-                     <Collapse title="Équipements" content={
-                        equipments && equipments.map(
-                           (equipments, index) => <ul key={equipments + index}><li key={index}>{equipments}</li></ul>)
-                     }/>
+                  <div>
+                     <img className="hostPicture" src= { host.picture } alt={ host.picture }/>
                   </div>
                </div>
-            )
-         })}
+            </div>
+            <div className="apartmentAssets">
+               <ul className="apartmentTags">
+                  {apart.tags && apart.tags.map((tag, index)=><li tag={tag + index}>{tag}</li>)}
+               </ul>
+               <div className="apartmentRate">
+                  <RatingStars rate={apart.rating}/>
+               </div>
+            </div> 
+            <div className="apartmentCaracteristics">
+               <Collapse title="Description" content={apart.description} />
+               <Collapse title="Équipements" content={
+                  apart.equipments && apart.equipments.map(
+                     (equipments, index) => <ul ><li key={equipments + index}>{equipments}</li></ul>)
+               }/>
+            </div>
+         </div>
       </div>
    );
 };

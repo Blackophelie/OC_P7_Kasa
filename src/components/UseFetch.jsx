@@ -6,50 +6,33 @@ import { useState, useEffect } from "react";
 // ----- Création des cards appartement ----- //
 
 function useFetch(url) {
-
-   const [data, setData] = useState({})
-   
-   const [isLoading, setLoading] = useState(true)
-   
+   const [data, setData] = useState({})   
+   const [isLoading, setLoading] = useState(true)   
    const [error, setError] = useState(false)
+          
+   useEffect(() => {   
+      if (!url) return
+         setLoading(true)
    
-    
+      async function fetchData() {
    
-   useEffect(() => {
-   
-   if (!url) return
-   
-   setLoading(true)
-   
-   async function fetchData() {
-   
-   try {
-   
-   const response = await fetch(url)
-   
-   const data = await response.json()
-   
-   setData(data)
-   
-   } catch (err) {
-   
-   setError(true)
-   
-   } finally {
-   
-   setLoading(false)
-   
-   }
-   
-   }
-   
-   fetchData()
-   
+         try {
+            const response = await fetch(url)
+            const data = await response.json()
+            setData(data)
+         } catch (err) {
+            setError(true)
+         } finally {
+            setLoading(false)
+         }
+      }
+      fetchData()
    }, [url])
    
    return { isLoading, data, error }
-   
-   }
+}
+
+export default useFetch;
    
 
 // function useFetch(url) {
@@ -64,7 +47,6 @@ function useFetch(url) {
 
 // return apart;
 // };
-export default useFetch;
 
 // // ----- Création de la fiche appartement ----- //
 // function useFetchApart() {
