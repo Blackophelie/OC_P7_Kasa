@@ -5,73 +5,99 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Error from '../pages/Error';
-import RightArrow from "../assets/arrow_right.svg";
+import RightArrow from "../assets/arrow_right.png";
 import "../styles/components/Carousel.css"
 import "../styles/pages/Apartment.css"
 
 // ----- Création du composant Carousel pour la page Apartment ----- //
 function Carousel() { 
-   const {id} = useParams();
-   // const {pictures} = Apartment.find((apart) => apart.id === id);
-   const { isLoading } = useState(true);
-   const [current, setCurrent] = useState([0]);
-   // const {pictures} = current.pictures;
+   // const { isLoading } = useState(true);
+   const [apart, setApart] = useState([0]);
+   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+   const pictures = apart.pictures || [];
+   const [index, picture] = pictures;
+
    
+   // Récupération de la promise correspondant à l'id
+   const {id} = useParams();
    useEffect(() => {
-      const getPicture = async () => {
+      const getPictureId = async () => {
          const res = await fetch("../datas/ApartmentsDatas.json")
          .then(res => res.json());
-         
          const data = res.find(apart => apart.id === id);
          
          if(!data) {
             <Error />
          }
-         setCurrent(data);
+         setApart(data);
       }
-      getPicture();
+      getPictureId();
    }, [id]);
-
-   if (isLoading) return <h3>Chargement...</h3>
+   
    
    const RightSliding = () => {
-      setCurrent(current === current.length -1 ? 0 : current +1);
+      // setCurrentImgIndex(currentImgIndex + 1)
+      // if(currentImgIndex === pictures.length - 1)
+      // setCurrentImgIndex()
+      setCurrentImgIndex(currentImgIndex === pictures.length -1 ? 0 : currentImgIndex +1);
    }
    
    const LeftSliding = () => {
-      setCurrent(current === 0 ? current.length -1 : current -1);
-   }
-   console.log(current);
 
-   return (
-      <div className="carouselBody" >
+      const newCurrentIndex = currentImgIndex - 1;
+      if(newCurrentIndex < 0) {
+      setCurrentImgIndex(pictures.length - 1);
+      return;
+      }
+      setCurrentImgIndex(currentImgIndex - 1)
+      // setApart(currentImgIndex === 0 ? pictures.length -1 : currentImgIndex -1);
+   }
+   
+   // if (isLoading) return <h3>Chargement...</h3>
+   
+   const addClassName = (i) =>{
+         if (i === currentImgIndex) return "view";
+         return "hidden";
+      };
+      
+      console.log(pictures);
+      console.log(currentImgIndex);
+      console.log(index);
+      console.log(addClassName(currentImgIndex));
+      
+      return (
+         <div className="carouselBody">
          <div className="arrows">            
-            <div className="goToLeft">
-               {(current.length > 1) &&(
-                  <img className="leftArrow" src={RightArrow} alt='flèche vers la gauche' onClick={LeftSliding}/>
-               )}
+            <div className="goToLeft" >
+               {/* flèches s'il y a plus d'une photo */}
+               {(pictures.length > 1) &&(
+                  <img className="leftArrow" src={RightArrow} alt="précédente" onClick={LeftSliding} left="previous"/>
+                  )}
             </div>
             <div className="goToRight">
-               {(current.length > 1) &&(
-                  <img className="rightArrow" src={RightArrow} alt='flèche vers la droite' onClick={RightSliding}/>
-               )}
+               {(pictures.length > 1) &&(
+                  <img className="rightArrow" src={ RightArrow } alt="suivante" onClick={RightSliding} right="next" />
+                  )}
             </div>
          </div>
-         
-         {current.pictures && current.pictures.map((picture, index) =>{
-            return(
-               <div className="carouselSlides" >
-                  {index === current.index &&(
-                     <img className='carouselImg' src={picture} alt="" pictures={current} />
-                     )}
-                  {index === current &&(
-                     <span className='carouselImgNumber'alt={(current +1)/(current.length)} length={current.length} >
-                        {current +1}/{current.length}
-                     </span>
-                  )}
-               </div>
-            );
-         })}
+         <div className="carouselSlides">
+
+            {currentImgIndex >= 0 && pictures.map((picture, index) => {
+               
+               return(
+                  <div className="carouselImg">
+                     <>
+                        <img className={addClassName(index)} src={picture} alt="aménagements" />
+                     </>
+                    
+                        <div className="carouselImgNumber" alt={"photo numéro " + (index + 1)} length={ pictures.length } >
+                           {(currentImgIndex + 1)} / { pictures.length }
+                        </div>
+                     
+                  </div>
+               );
+            })}
+         </div>
       </div>
    );
 };

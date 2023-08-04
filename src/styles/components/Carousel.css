@@ -3,35 +3,59 @@
    margin-top: 40px;
    width: 90%;
 }
+.carouselSlides {
+   height: 415px;
+}
 
-.carouselImg {
+.carouselImg img {
+   position: absolute;
    width: 100%;
    height: 415px;
    border-radius: 25px;
    object-fit: cover;
 }
 
+.carouselImg .view {
+   opacity: 1;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.carouselImg .hidden {
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
 
 .carouselImgNumber {
    font-size: 18px;
    font-family: "Montserrat";
-   font-weight: 500;
    position: absolute;
    top: 90%;
    left: 50%;
    color: #FFFFFF;
 }
 
+.arrows {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   position: absolute;
+   z-index: 10;
+   top: 20%;
+   width: 100%;
+   height: 120px;
+
+}
 
 .leftArrow, .rightArrow {
    position: absolute;
-   z-index: 1;
+   z-index: 99;
    top: 33%;
    cursor: pointer;
 }
 
 .leftArrow {
-   padding: 5px 0px;
+   padding: 28px 0px;
    rotate: 180deg;
 }
 
@@ -41,24 +65,22 @@
    rotate: 0deg;
 }
 
-.arrows {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   position: absolute;
-   top: 20%;
-   width: 100%;
-   height: 120px;
-
-}
 
 .goToLeft, .goToRight {
    display: flex;
+   width: 96px;
 }
 
 @media only screen and (max-width:375px) {
-   .carouselImg {
-     height: 255px;
+   .carouselSlides {
+      height: 255px;
+   }
+   
+   .carouselImg img {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      height: 255px;
    }
 
    .leftArrow, .rightArrow {
@@ -73,3 +95,50 @@
       visibility: hidden;
    }
 }
+/* 
+@keyframes fade-in {
+   from {
+     opacity: 0;
+     transform: scale(1.3);
+   }
+   to {
+     opacity: 1;
+     transform: scale(1);
+   }
+ }
+ 
+ @keyframes next-slide-in {
+   from {
+     transform: translateX(100%);
+   }
+   to {
+     transform: translateX(0);
+   }
+ }
+ 
+ @keyframes next-slide-out {
+   from {
+     transform: translateX(0);
+   }
+   to {
+     transform: translateX(-100%);
+   }
+ }
+ 
+ @keyframes back-slide-in {
+   from {
+     transform: translateX(-100%);
+   }
+   to {
+     transform: translateX(0);
+   }
+ }
+ 
+ @keyframes back-slide-out {
+   from {
+     transform: translateX(0);
+   }
+   to {
+     transform: translateX(100%);
+   }
+ } */

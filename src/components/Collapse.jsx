@@ -19,10 +19,12 @@ function Collapse({ title, content }) {
                alt={open ? "Flèche vers le haut" : "Flèche vers le bas"} />
          </div>
          <div className='"collapseTxtContainer" + {open ? "visibleTxtContainer" : "hiddenTxtContainer"}'>
-            <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"}>
+            <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"} content={content}>
                <li className="collapseTxtList">
                   <span className="collapseTxtContent">
-                     <div>{content}</div>
+                     <div>
+                        {content}
+                     </div>
                   </span>
                </li>
             </ul>

@@ -6,12 +6,16 @@ import InactiveStar from "../assets/star-inactive.png";
 function RatingStars(rate) {
    const range = [1, 2, 3, 4, 5];
 
-   return range.map((rangeElem) => 
+   return (
+      <>
+      {range.map((rangeElem, index) => 
       rangeElem > rate.rate ? (
-         <img className="emptyStars" src={InactiveStar} alt="étoile vide"  />               
+         <img className="emptyStars" empty={index + 1} src={InactiveStar} alt="étoile vide"  />               
          ) : (
-         <img className="fullStars" src={ActiveStar} alt="étoilé" />
-      )
+         <img className="fullStars" full={rangeElem} src={ActiveStar} alt="étoilé"  />
+         )
+      )} 
+      </>
    );
 };
 

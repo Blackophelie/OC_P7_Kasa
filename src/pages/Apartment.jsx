@@ -19,7 +19,7 @@ function ApartmentCard() {
    
    useEffect(() => {
       const getApart = async () => {
-         const res = await fetch("../datas/ApartmentsDatas.json")
+         const res = await fetch("/datas/ApartmentsDatas.json")
          .then(res => res.json());
          
          const data = res.find(apart => apart.id === id);
@@ -39,7 +39,7 @@ function ApartmentCard() {
    return (
       <div className="apartmentCard">
          <div className="carousel" >
-            <Carousel key={apart.pictures} />
+            <Carousel carousel="picture"/>
          </div>
          <div className="apartmentBody">
             <div className="designation">
@@ -56,23 +56,26 @@ function ApartmentCard() {
                      { host.name }
                   </div>
                   <div>
-                     <img className="hostPicture" src= { host.picture } alt={ host.picture }/>
+                     <img className="hostPicture" picture={ host.name } src= { host.picture } alt={ host.picture }/>
                   </div>
                </div>
             </div>
-            <div className="apartmentAssets">
-               <ul className="apartmentTags">
-                  {apart.tags && apart.tags.map((tag, index)=><li tag={tag + index}>{tag}</li>)}
+            <div className="apartmentAssets" >
+               <ul className="apartmentTags" tags="tags">
+                  { apart.tags && apart.tags.map((tag)=><li tag={ tag }>{ tag }</li> )}
                </ul>
-               <div className="apartmentRate">
+               <div className="apartmentRate" >
                   <RatingStars rate={apart.rating}/>
                </div>
             </div> 
             <div className="apartmentCaracteristics">
-               <Collapse title="Description" content={apart.description} />
+               <Collapse title="Description" content={ apart.description }/>
                <Collapse title="Équipements" content={
                   apart.equipments && apart.equipments.map(
-                     (equipments, index) => <ul ><li key={equipments + index}>{equipments}</li></ul>)
+                     (equipments) => 
+                        <ul>
+                           <li>{ equipments }</li>
+                        </ul>)
                }/>
             </div>
          </div>
