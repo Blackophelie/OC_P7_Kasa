@@ -2,10 +2,12 @@
 
 // ----- Importations ----- //
 import React, {useState} from "react";
-import "../styles/components/Collapse.css";
+
 import ScrollingArrow from "../components/Arrow";
 
-// ----- Création la flèche de déroulement ----- //
+import "../styles/components/Collapse.css";
+
+// ----- Création du composant Collapse ----- //
 function Collapse({ title, content }) { 
    const [open, setOpen] = useState(false);
    const toggle = () => { setOpen(!open)};
@@ -14,15 +16,13 @@ function Collapse({ title, content }) {
       <div className="collapse">
          <div className="collapseBtn" onClick={toggle}>
             <p className="collapseBtnTxt">{title}</p>
-            <ScrollingArrow 
-               className={open ?"arrowUp" : "arrowDown"} 
-               alt={open ? "Flèche vers le haut" : "Flèche vers le bas"} />
+            <ScrollingArrow className={open ?"arrowUp" : "arrowDown"} alt={open ? "Fermer le volet" : "Ouvrir le volet"} />
          </div>
          <div className='"collapseTxtContainer" + {open ? "visibleTxtContainer" : "hiddenTxtContainer"}'>
-            <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"} content={content}>
+            <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"} contain={content}>
                <li className="collapseTxtList">
                   <span className="collapseTxtContent">
-                     <div>
+                     <div >
                         {content}
                      </div>
                   </span>
@@ -33,5 +33,6 @@ function Collapse({ title, content }) {
    )
 };
 
+// ----- export du composant Collapse ----- //
 export default Collapse;
 

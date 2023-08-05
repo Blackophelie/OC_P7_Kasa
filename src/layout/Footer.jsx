@@ -7,17 +7,15 @@ import { Link } from "react-router-dom";
 
 import "../styles/layout/Footer.css";
 
-// ----- Création du footer ----- //
+// ----- Création du Footer ----- //
 function Footer() {
    return (
       <footer>
-         {/* <div> */}
-            {/* Insertion du lien vers la page d'accueil */}
-            <Link to="/Home">
-               {/* Insertion du Logo du footer */}
-               <img src={ Logo } alt="logo kasa" className="footerLogo" />
-            </Link>
-         {/* </div> */}
+         {/* Insertion du lien vers la page d'accueil */}
+         <Link to="/Home">
+            {/* Insertion du Logo du footer */}
+            <img src={ Logo } alt="logo kasa" className="footerLogo" />
+         </Link>
          <div className="copyright">
             @ 2020 Kasa. All rights reserved
          </div>

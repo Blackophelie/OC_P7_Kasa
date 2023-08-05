@@ -1,26 +1,17 @@
 /************* Composant Gallery de la page Home *************/
 
 // ----- Importations ----- //
-import React, {useState, useEffect} from "react";
-import Card from "../components/Card"
-// import useFetch from "../components/UseFetch";
+import React from "react";
+
+import Card from "../components/Card";
+import useFetch from "../hooks/UseFetch";
 
 import "../styles/components/GalleryCard.css";
 
-
-
 // ----- Création de la galerie de la page d'accueil ----- //
 function Gallery() {
-      const [apart, setApart] = useState();
-      // console.log(apart);
-      useEffect(() => {
-         fetch("http://localhost:3000/datas/ApartmentsDatas.json")
-            .then ((res) => res.json())
-            .then ((apart) => setApart(apart))
-            .catch((error) => error)
-      }, []);
-   // const aparts = useFetch("http://localhost:3000/datas/ApartmentsDatas.json")
-   return (
+      const apart = useFetch("http://localhost:3000/datas/ApartmentsDatas.json");
+      return (
       <div className="galleryContainer">
          {apart && apart.map(apart=>{
          

@@ -8,9 +8,9 @@ import "../styles/components/GalleryCard.css";
 // ----- Création d'une fiche appartement ----- //
 function Card({id, title, cover}) {
    return (
-      <Link to={`/Apartment/${id}`} className="galleryCard" id={id}>
-         <div className="cardPicture">
-            <img src={cover} alt={title} cover={cover} />
+      <Link to={`/Apartment/${id}`} className="galleryCard">
+         <div className="cardPicture" key={title}>
+            <img src={cover} alt={title} />
             <h3 title={title}>{title}</h3>
          </div>
       </Link>

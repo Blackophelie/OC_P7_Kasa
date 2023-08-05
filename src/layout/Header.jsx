@@ -12,16 +12,12 @@ import "../styles/layout/Header.css";
 function Header() {
    return (
       <header>
-         {/* <div> */}
-            {/* import du composant logo */}
-            <Link to="/Home">
-               <img src={ Logo } alt="logo kasa" className="navLogo" />
-            </Link>
-         {/* </div> */}
-         {/* import du composant navigation du header */}
-         {/* <nav > */}
-            <Nav className="navBar" />
-         {/* </nav> */}
+         {/* Import du composant logo */}
+         <Link to="/Home">
+            <img src={ Logo } alt="logo kasa" className="navLogo" />
+         </Link>
+         {/* Import du composant navigation du header */}
+         <Nav className="navBar" />
       </header>   
    );
 };

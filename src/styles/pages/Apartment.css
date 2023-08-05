@@ -13,15 +13,16 @@
 }
 
 .designation {
-   display: flex;
-   justify-content: flex-start;
-   width: 70%;
-   padding: 0 5%;
-   color: #FF6060;
+   position: relative;
 }
 
 .apartmentDesignation {
-   flex-direction: row;
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+   width: 70%;
+   padding: 0 5%;
+   color: #FF6060;
 }
 
 .apartmentTitle {
@@ -38,12 +39,11 @@
 .apartmentHost {
    position: absolute;
    display: flex;
-   flex-direction: row;
    align-items: center;
-   justify-content: flex-end;
    font-size: 18px;
    width: 160px;
    right: 5%;
+   top: 5%;
 }
 
 .hostName {

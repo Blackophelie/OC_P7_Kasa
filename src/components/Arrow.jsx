@@ -3,7 +3,7 @@
 // ----- Importations ----- //
 import React, { useState } from "react";
 import "../styles/components/Arrow.css";
-import Arrow from "../assets/arrow_down.svg";
+import Arrow from "../assets/arrow_down.png";
 
 // ----- Création de la flèche ----- //
 function ScrollingArrow() { 
@@ -17,5 +17,6 @@ function ScrollingArrow() {
    )
 };
 
+// ----- Exposrt du composant Flèche de déroulement ----- //
 export default ScrollingArrow;
 

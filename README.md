@@ -7,8 +7,8 @@
 Développement d'une nouvelle plateforme web spécialisée dans la location d'appartements entre particuliers. Refonte de l'ancien site.
 
 ## Objectifs du projet et compétences évaluées
-- Initialiser une application avec create react App.
-- Configurer la navigation entre les pages de l'application avec React router.
+- Initialiser une application avec Create React App.
+- Configurer la navigation entre les pages de l'application avec React Router.
 - Développer des éléments de l'interface d'un site web grâce à des composants React et la syntaxe JSX.
 
 ### Développement en Javascript et React
