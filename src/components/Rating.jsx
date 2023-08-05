@@ -10,11 +10,11 @@ function RatingStars(rate) {
 
    return (
       <>
-         {range.map((rangeElem) => 
+         {range.map((rangeElem, index) => 
          rangeElem > rate.rate ? (
-            <img className="emptyStars" src={InactiveStar} empty={InactiveStar} alt="étoile vide"  />               
+            <img className="emptyStars" src={InactiveStar} alt="étoile vide" key={rangeElem} />               
             ) : (
-            <img className="fullStars" src={ActiveStar} full={ActiveStar} alt="étoilé"  />
+            <img className="fullStars" src={ActiveStar} alt="étoilé" key={index} />
             )
          )} 
       </>

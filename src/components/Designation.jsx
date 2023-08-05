@@ -3,7 +3,7 @@
 import React, { useState, useEffect} from 'react';
 import { useParams } from "react-router-dom";
 
-import RatingStars from "../components/Rate";
+import RatingStars from "../components/Rating";
 import Error from '../pages/Error';
 
 import "../styles/pages/Apartment.css";
@@ -42,7 +42,7 @@ function Designation() {
          </div>
          <div className="apartmentAssets" >
             <ul className="apartmentTags" >
-               { apart.tags && apart.tags.map((tag)=> <li tag={ tag }> { tag } </li>) }
+               { apart.tags && apart.tags.map((tag)=> <li key={ tag }> { tag } </li>) }
             </ul>
             <div className="apartmentRate" >
                <RatingStars rate={ apart.rating }/>

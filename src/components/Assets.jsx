@@ -36,8 +36,8 @@ function Assets() {
          <Collapse title="Équipements" content={
             apart.equipments && apart.equipments.map(
                (equipments, index) =>
-                  <ul>
-                     <li equipments={index}>{ equipments }</li>
+                  <ul key={index}>
+                     <li >{ equipments }</li>
                   </ul>
             )
          }/>

@@ -11,7 +11,7 @@ import "../styles/components/Collapse.css";
 function Collapse({ title, content }) { 
    const [open, setOpen] = useState(false);
    const toggle = () => { setOpen(!open)};
-
+   
    return (
       <div className="collapse">
          <div className="collapseBtn" onClick={toggle}>
@@ -19,12 +19,10 @@ function Collapse({ title, content }) {
             <ScrollingArrow className={open ?"arrowUp" : "arrowDown"} alt={open ? "Fermer le volet" : "Ouvrir le volet"} />
          </div>
          <div className='"collapseTxtContainer" + {open ? "visibleTxtContainer" : "hiddenTxtContainer"}'>
-            <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"} contain={content}>
+            <ul className={open ? "visibleCollapseTxtContainer" : "hiddenCollapseTxtContainer"}>
                <li className="collapseTxtList">
                   <span className="collapseTxtContent">
-                     <div >
-                        {content}
-                     </div>
+                     <div>{content}</div>
                   </span>
                </li>
             </ul>

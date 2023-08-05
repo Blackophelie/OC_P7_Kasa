@@ -72,9 +72,9 @@ function Carousel() {
          <div className="carouselSlides">
             {currentImgIndex >= 0 && pictures.map((picture, index) => {
                return(
-                  <div className="carouselImg">
-                     <img className={addClassName(index)} src={picture} alt="aménagements" picture={picture} />
-                     <div className="carouselImgNumber" alt={"photo numéro " + (index + 1)} number={index + 1}>
+                  <div className="carouselImg" key={index}>
+                     <img className={addClassName(index)} src={picture} alt="aménagements"/>
+                     <div className="carouselImgNumber" alt={"photo numéro " + (index + 1)}>
                         {(currentImgIndex + 1)} / { pictures.length }
                      </div>                     
                   </div>
